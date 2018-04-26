@@ -30,7 +30,7 @@ USER root
 RUN yum install -y wget
 
 # Gradle Install
-ENV GRADLE_VERSION 3.4
+ENV GRADLE_VERSION 4.7
 RUN wget https://services.gradle.org/distributions/gradle-$GRADLE_VERSION-bin.zip -O gradle.zip \
   && unzip gradle.zip -d /usr/share \
   && rm gradle.zip \
