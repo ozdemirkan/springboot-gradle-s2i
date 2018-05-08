@@ -22,10 +22,17 @@ LABEL name="woodmenlife/springboot-gradle-s2i" \
       io.openshift.tags="builder,java,java8,gradle,gradle3,springboot" \
       io.openshift.s2i.destination="/tmp"
 
-# instead of using wget to download the garadle zip perhaps
-# use ADD to add from a local file.  Then USER 0 would no
-# longer be neccessary.
 USER root
+
+RUN yum install -y  https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+
+#Install core RPMs
+RUN yum -y install \
+  nodejs \
+  npm 
+
+
 
 RUN yum install -y wget
 
