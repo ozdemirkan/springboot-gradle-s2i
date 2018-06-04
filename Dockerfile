@@ -1,7 +1,7 @@
 FROM redhat-openjdk-18/openjdk18-openshift
 
-MAINTAINER Joshua T. Pyle <JPyle@woodmen.org>
-
+MAINTAINER Melih Ozdemirkan 
+ 
 ENV SERVER_PORT=8080 \
     MANAGEMENT_PORT=8081 \
     PATH="$PATH:"/usr/local/s2i"" \
@@ -24,14 +24,20 @@ LABEL name="woodmenlife/springboot-gradle-s2i" \
 
 USER root
 
+#Install epel repo
 RUN yum install -y  https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+RUN yum install -y curl
+RUN curl -sL https://rpm.nodesource.com/setup_8.x | bash -
+RUN yum install -y nodejs
+#RUN yum install -y npm
+
 
 
 #Install core RPMs
-RUN yum -y install \
-  nodejs \
-  npm 
-
+#RUN yum -y install \
+#  nodejs \
+#  npm 
 
 
 RUN yum install -y wget

@@ -1,5 +1,5 @@
 
-IMAGE_NAME = gradle-nodejs-s2i
+IMAGE_NAME = ozdemirkan/gradle-nodejs-s2i
 
 build:
 	sudo docker build -t $(IMAGE_NAME) .
