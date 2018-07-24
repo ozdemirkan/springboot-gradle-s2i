@@ -61,3 +61,7 @@ echo "---> Building application from source..."
 cd /tmp/src
 sh $GRADLE_HOME/bin/gradle $GRADLE_ARGS
 
+echo "---> Copying built application to app-root..."
+# TODO this may fail if there are more than one jar generated
+cp -a $ARTIFACT_DIR/*.jar  /build/libs/
+
