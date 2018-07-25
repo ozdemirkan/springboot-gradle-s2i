@@ -65,6 +65,9 @@ echo "---> Copying built application to app-root..."
 # TODO this may fail if there are more than one jar generated
 echo "---> \$ARTIFACT_DIR set with value: [${ARTIFACT_DIR}]"
 echo "pwd is ${PWD}"
-mkdir build/libs/
+
+mkdir build
+mkdir libs
+
 cp -a $ARTIFACT_DIR/*.jar  build/libs/
 
