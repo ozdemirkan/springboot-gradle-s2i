@@ -63,5 +63,7 @@ sh $GRADLE_HOME/bin/gradle $GRADLE_ARGS
 
 echo "---> Copying built application to app-root..."
 # TODO this may fail if there are more than one jar generated
-cp -a $ARTIFACT_DIR/*.jar  /build/libs/
+echo "---> \$ARTIFACT_DIR set with value: [${ARTIFACT_DIR}]"
+
+cp -a $ARTIFACT_DIR/*.jar  build/libs/
 
